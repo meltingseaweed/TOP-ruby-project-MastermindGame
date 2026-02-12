@@ -38,35 +38,40 @@ module Mastermind
       # each color. So instead of this current style, it might be
       # better to try and find out how to switch the colors ONLY
       # of the incorrect indexs. 
+      binding.pry
       included_colors.flatten!
       round_count = 6
-        binding.pry
       solved = false
-      count = 0
-      color_range = included_colors.uniq
+      # count = 0
+      # color_range = included_colors.uniq
       while solved != true
 
         if included_colors == secret_code
           solved = true
+          break
         end
       incorrect_idx = []
-      # color_shuffle = []
+      color_shuffle = []
       included_colors.each_with_index do |color, idx|
         if color != secret_code[idx]
           incorrect_idx << idx
-          # color_shuffle << color
+          color_shuffle << color
         end
       end
-      # color_shuffle.shuffle!
-      # for incorrect_idx.each do |i|
-      #   included_colors[i] = color_shuffle[i]
-      #   The only problem is it might check the same answer a couple
-      #   of times. But I guess it's not that big a problem..?
-      #  end
+
+      color_shuffle.shuffle!
+# One of the values became nil, check tomorrow to find out why..?
+      position = 0
       incorrect_idx.each do |i|
-        included_colors[i] = color_range[count]
-      end
-      count += 1
+        binding.pry
+        included_colors[i] = color_shuffle[position]
+        position += 1
+
+       end
+      # incorrect_idx.each do |i|
+      #   included_colors[i] = color_range[count]
+      # end
+      # count += 1
       end
     p "The final answer was found to be #{included_colors}"
     included_colors

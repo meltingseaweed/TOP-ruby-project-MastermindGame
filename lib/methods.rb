@@ -13,7 +13,7 @@ module Mastermind
     end
 
     def check_color(secret_code, color)
-      binding.pry
+      # binding.pry
       colors_found = []
       red_pins = 0
       secret_code.each do |secret|

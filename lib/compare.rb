@@ -10,7 +10,6 @@ module Mastermind
     end
     # exact_match can return the number of red pins
     def exact_match(comp, user)
-      binding.pry
       red_pins = 0
       user.each_with_index do |color, idx|
         if color == comp[idx]
