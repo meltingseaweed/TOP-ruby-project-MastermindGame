@@ -31,7 +31,7 @@ module Mastermind
             unmatched_comp.push(comp[idx])
           end
         end
-        # Need to now find the number of matching colors.
+        # Find the number of matching colors.
         unmatched_user.each do |color|
           if unmatched_comp.include?(color)
             white_pins += 1

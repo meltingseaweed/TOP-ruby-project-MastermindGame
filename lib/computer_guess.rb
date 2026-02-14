@@ -68,7 +68,6 @@ module Mastermind
 
       position = 0
       @incorrect_idx.each do |i|
-        binding.pry
         @included_colors[i] = @color_shuffle[position]
         position += 1
        end

@@ -17,7 +17,6 @@ module Mastermind
     end
 
     def play_game
-      binding.pry
       while @round_count < 12
         computer = @secret_code.dup
         @user_guess = show_colors # Or does it need self.show_colors?
