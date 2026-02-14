@@ -1,8 +1,9 @@
 # These methods will compare if the code matches and return 
 # the correct number of white or reds. 
 module Mastermind
+
   module Compare
-    # determines if the round is over
+    
     def all_match(comp, user)
       if comp == user then true
       else false
